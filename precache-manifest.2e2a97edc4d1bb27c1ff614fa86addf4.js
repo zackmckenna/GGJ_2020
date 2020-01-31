@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c50d4f1ff4981859d17f105ef025edd4",
+    "revision": "d32c52fdf08f1ab9f11d4caa2f61e38c",
     "url": "/GGJ_2020/index.html"
   },
   {
-    "revision": "3fcf01619c9540302237",
+    "revision": "b09f831d7bb81e0ecf5e",
     "url": "/GGJ_2020/static/css/main.d1b05096.chunk.css"
   },
   {
@@ -16,12 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/GGJ_2020/static/js/2.38428891.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3fcf01619c9540302237",
-    "url": "/GGJ_2020/static/js/main.98e9dd9f.chunk.js"
+    "revision": "b09f831d7bb81e0ecf5e",
+    "url": "/GGJ_2020/static/js/main.ae8c1776.chunk.js"
   },
   {
     "revision": "e2bf22652e072e7cfa76",
     "url": "/GGJ_2020/static/js/runtime-main.d8aba86a.js"
+  },
+  {
+    "revision": "aa9f7d1c36cd6c88ad43825f1a2ff780",
+    "url": "/GGJ_2020/static/media/ggjLogo.aa9f7d1c.svg"
   },
   {
     "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",

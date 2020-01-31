@@ -1,23 +1,24 @@
 {
   "files": {
     "main.css": "/GGJ_2020/static/css/main.d1b05096.chunk.css",
-    "main.js": "/GGJ_2020/static/js/main.98e9dd9f.chunk.js",
-    "main.js.map": "/GGJ_2020/static/js/main.98e9dd9f.chunk.js.map",
+    "main.js": "/GGJ_2020/static/js/main.ae8c1776.chunk.js",
+    "main.js.map": "/GGJ_2020/static/js/main.ae8c1776.chunk.js.map",
     "runtime-main.js": "/GGJ_2020/static/js/runtime-main.d8aba86a.js",
     "runtime-main.js.map": "/GGJ_2020/static/js/runtime-main.d8aba86a.js.map",
     "static/js/2.38428891.chunk.js": "/GGJ_2020/static/js/2.38428891.chunk.js",
     "static/js/2.38428891.chunk.js.map": "/GGJ_2020/static/js/2.38428891.chunk.js.map",
     "index.html": "/GGJ_2020/index.html",
-    "precache-manifest.e0b0db8e9070fd41541180ced5f2b8a3.js": "/GGJ_2020/precache-manifest.e0b0db8e9070fd41541180ced5f2b8a3.js",
+    "precache-manifest.2e2a97edc4d1bb27c1ff614fa86addf4.js": "/GGJ_2020/precache-manifest.2e2a97edc4d1bb27c1ff614fa86addf4.js",
     "service-worker.js": "/GGJ_2020/service-worker.js",
     "static/css/main.d1b05096.chunk.css.map": "/GGJ_2020/static/css/main.d1b05096.chunk.css.map",
     "static/js/2.38428891.chunk.js.LICENSE.txt": "/GGJ_2020/static/js/2.38428891.chunk.js.LICENSE.txt",
+    "static/media/ggjLogo.svg": "/GGJ_2020/static/media/ggjLogo.aa9f7d1c.svg",
     "static/media/logo.svg": "/GGJ_2020/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d8aba86a.js",
     "static/js/2.38428891.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.98e9dd9f.chunk.js"
+    "static/js/main.ae8c1776.chunk.js"
   ]
 }
