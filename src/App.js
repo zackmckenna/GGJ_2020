@@ -8,7 +8,7 @@ import Prompt from './components/Prompt'
 import StartPage from './components/StartPage'
 import Components from './components/Components'
 import axios from 'axios'
-import base from './services/airtable'
+import airtableService from './services/airtable'
 
 function App() {
   const [players, setPlayers] = useState(0)
@@ -26,7 +26,9 @@ function App() {
   const handlePlayerChange = async event => {
     setPlayers(event.target.value)
     console.log(airtableData)
-    console.log(base)
+    // console.log(base)
+    const parts = airtableService.getParts()
+    console.log(parts)
   }
   // six items
   return (
