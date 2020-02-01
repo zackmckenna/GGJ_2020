@@ -29,9 +29,9 @@ const StartPage = ({
       <img src={getRandomImage(introPix, '/images/intros/')} className="App-logo" alt="logo" />
       <p></p>
         <code>GGJ 2020</code>
-      
+
 <p>Welcome to Space Station Gornath! What brings you this deep into the Omega Quadrant?
-Anyways, the rough conditions and remoteness of this region make this output an oasis for explorers. Most visitors have a need for repairs and upgrades. 
+Anyways, the rough conditions and remoteness of this region make this output an oasis for explorers. Most visitors have a need for repairs and upgrades.
 Due to this need multiple repair shops have emerged in the station, of varying quality…</p>
 
 <p>In this game you will take turns being the <u>repair shop owners</u> and <u>customers</u> with particular needs. </p>
@@ -57,7 +57,7 @@ Due to this need multiple repair shops have emerged in the station, of varying q
   </Form.Group>
     </Form>
 
-    <Link to='/prompt'>
+    <Link to={process.env.PUBLIC_URL + '/prompt'}>
       <Button onClick={() => handleClick()}>Start Game</Button>
     </Link>
     </>
