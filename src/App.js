@@ -74,8 +74,8 @@ function App() {
         <BackgroundMusic/>
         <Router>
           <Switch>
-            <Route exact path="/" render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
-            <Route exact path="/prompt" render={() => {
+            <Route exact path={process.env.PUBLIC_URL + "/"} render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
+            <Route path={process.env.PUBLIC_URL + "/prompt"} render={() => {
               return (
                 <Prompt
                   players={players}
@@ -83,7 +83,7 @@ function App() {
                   criteria={criteria}/>
               )}
             }/>
-            <Route exact path="/components" render={() => <Components players={players} />} />
+            <Route path={process.env.PUBLIC_URL + "/components"} render={() => <Components players={players} />} />
           </Switch>
         </Router>
       </header>
