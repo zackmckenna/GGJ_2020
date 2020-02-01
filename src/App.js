@@ -8,7 +8,12 @@ import Prompt from './components/Prompt'
 import StartPage from './components/StartPage'
 import Components from './components/Components'
 import axios from 'axios'
+<<<<<<< HEAD
 // import airtableService from './services/airtable'
+=======
+import BackgroundMusic from './components/MyComponentWithSound'
+// import base from './components/airtable'
+>>>>>>> 020dea8e2d2558992a74a30310e47fefecfc6676
 
 function App() {
   const [players, setPlayers] = useState(0)
@@ -71,6 +76,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <BackgroundMusic/>
         <Router>
           <Switch>
             <Route exact path="/" render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
