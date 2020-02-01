@@ -18,14 +18,22 @@ function getRandomImage(imgAr, path) {
 }
 
 
-const Prompt = ({ players, parts, criteria }) => {
+const Prompt = ({ players, playerObjects, playerNames, parts, criteria }) => {
 
   const grabRandomPart = () => {
-    return parts[Math.floor(Math.random() * parts.length)].Name
+    if (parts){
+      return parts[Math.floor(Math.random() * parts.length)].Name
+    } else {
+      return 'Error'
+    }
   }
 
   const grabRandomCriteria = () => {
-    return criteria[Math.floor(Math.random() * criteria.length)].Name
+    if (criteria) {
+      return criteria[Math.floor(Math.random() * criteria.length)].Name
+    } else {
+      return 'Error'
+    }
   }
 
   return (
@@ -34,9 +42,9 @@ const Prompt = ({ players, parts, criteria }) => {
       <h1>
         I need a <span className='text-danger'>{grabRandomPart()}</span> that <span className='text-warning'>{grabRandomCriteria()}</span>.
       </h1>
-      <h2>There are {players} players.</h2>
+      <h2>There are {playerObjects.length} players.</h2>
       <div>
-        <Link to='/components'>
+        <Link to={process.env.PUBLIC_URL + '/components'}>
           <Button >Start Game</Button>
         </Link>
       </div>

@@ -15,12 +15,22 @@ function getRandomImage(imgAr, path) {
 
 const StartPage = ({
   handlePlayerChange,
-  players
+  players,
+  setNameInput,
+  nameInput,
+  handleNameSubmit,
+  playerNames,
+  playerObjects
 })=> {
 
   const handleClick = () => {
     console.log('clicked')
     // props.history.push('/prompt')
+  }
+
+  const handleNameInputChange = event => {
+    setNameInput(event.target.value)
+    console.log(nameInput)
   }
 
   return (
@@ -44,8 +54,15 @@ Due to this need multiple repair shops have emerged in the station, of varying q
 <p></p>
 <p></p>
 
-      <p>How many players?</p>
-    <Form onChange={event => handlePlayerChange(event)}>
+      <p>Add up to 5 Players</p>
+      <ul>
+      {playerObjects.map((player, index) => {
+        return (
+          <li key={index}>{player.name}</li>
+        )
+      })}
+      </ul>
+    {/* <Form onChange={event => handlePlayerChange(event)}>
     <Form.Group controlId="exampleForm.ControlSelect2">
     <Form.Label>Select Number of Players</Form.Label>
     <Form.Control as="select" multiple>
@@ -55,7 +72,18 @@ Due to this need multiple repair shops have emerged in the station, of varying q
       <option>4</option>
     </Form.Control>
   </Form.Group>
-    </Form>
+    </Form> */}
+    {playerObjects.length <= 4 ? <Form onChange={(event) => handleNameInputChange(event)}>
+      <Form.Group controlId="formBasicEmail">
+        <Form.Label>player name</Form.Label>
+        <Form.Control type="text" placeholder="player name" />
+        {/* <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text> */}
+      </Form.Group>
+      <Button onClick={(event) => handleNameSubmit(event)}>Add Player</Button>
+    </Form> : null}
+
 
     <Link to={process.env.PUBLIC_URL + '/prompt'}>
       <Button onClick={() => handleClick()}>Start Game</Button>
