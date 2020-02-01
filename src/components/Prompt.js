@@ -2,7 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
-<<<<<<< HEAD
+
+//todo:
+//-generate prompt from airtable randomw rows; "I need a __(part)__ that __(criteria)__"
+//-display a random prompt image
+//-indicate which player is the judge
+
+
 const Prompt = ({ players, parts, criteria }) => {
 
   const grabRandomPart = () => {
@@ -13,14 +19,6 @@ const Prompt = ({ players, parts, criteria }) => {
     return criteria[Math.floor(Math.random() * criteria.length)].Name
   }
 
-=======
-//todo:
-//-generate prompt from airtable randomw rows; "I need a __(part)__ that __(criteria)__"
-//-display a random prompt image
-//-indicate which player is the judge
-
-const Prompt = ({ players }) => {
->>>>>>> 020dea8e2d2558992a74a30310e47fefecfc6676
   return (
     <>
       <h1>
