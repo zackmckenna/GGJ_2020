@@ -70,13 +70,11 @@ function App() {
   // six items
   return (
     <div className="App">
-      <StartPage players={players} handlePlayerChange={handlePlayerChange}/>
       <header className="App-header">
         <BackgroundMusic/>
-        <StartPage players={players} handlePlayerChange={handlePlayerChange} />
         <Router>
           <Switch>
-            <Route exact path="GGJ_2020/" render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
+            <Route exact path={process.env.PUBLIC_URL + '/'} render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
             <Route path="/prompt" render={() => {
               return (
                 <Prompt
