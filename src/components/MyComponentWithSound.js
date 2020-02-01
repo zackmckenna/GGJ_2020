@@ -18,10 +18,11 @@ class MyComponentWithSound extends React.Component {
     <Sound
       url={getSound('spacejazz_demo1.mp3')}
       playStatus={Sound.status.PLAYING}
-      playFromPosition={300 /* in milliseconds */}
+      playFromPosition={0 /* in milliseconds */}
       onLoading={this.handleSongLoading}
       onPlaying={this.handleSongPlaying}
       onFinishedPlaying={this.handleSongFinishedPlaying}
+      loop={true}
     />
   );
   }
