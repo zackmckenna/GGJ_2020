@@ -1,16 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import ggjLogo from './ggjLogo.svg'
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { BrowserRouter as Router,
+        Switch,
+        Route } from 'react-router-dom'
+import Prompt from './components/Prompt'
+import StartPage from './components/StartPage'
+import Components from './components/Components'
+import axios from 'axios'
 
 function App() {
+  const [players, setPlayers] = useState(0)
+  const [playerNames, setPlayerNames] = useState([])
+  const [airtableData, setAirtableData] = useState([])
+
+  useEffect(() => {
+    axios.get('https://api.airtable.com/v0/apprkbgfXPMCZlFFR/Parts?api_key=keyLErx2N17rFxZOY')
+        .then(res => {
+          console.log(res.data)
+          setAirtableData( res.data)
+        })
+  }, [])
+
+  const handlePlayerChange = async event => {
+    setPlayers(event.target.value)
+    console.log(airtableData)
+  }
+  // six items
   return (
     <div className="App">
       <header className="App-header">
-        <img src={ggjLogo} className="App-logo" alt="logo" />
-        <p>
-          <code>gearing up for GGJ 2020!!!!</code>
-        </p>
+        <Router>
+          <Switch>
+            <Route exact path="/" render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
+            <Route path="/prompt" render={() => <Prompt players={players} />}/>
+            <Route path="/components" render={() => <Components players={players} />} />
+          </Switch>
+        </Router>
       </header>
     </div>
   );
