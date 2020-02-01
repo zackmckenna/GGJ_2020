@@ -5,7 +5,10 @@
 /.pnp
 .pnp.js
 .env
+<<<<<<< HEAD
 
+=======
+>>>>>>> jan31
 
 # testing
 /coverage
