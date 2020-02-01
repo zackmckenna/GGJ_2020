@@ -19,7 +19,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://guarded-ridge-39330.herokuapp.com/api/airtable/parts')
+    axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/parts')
         .then(res => {
           console.log(res)
           console.log(res.data)
@@ -31,7 +31,7 @@ function App() {
           })
         })
 
-    axios.get('http://guarded-ridge-39330.herokuapp.com/api/airtable/components')
+    axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/components')
         .then(res => {
           console.log(res.data)
           res.data.map(component => {
@@ -40,7 +40,7 @@ function App() {
           })
         })
 
-    axios.get('http://guarded-ridge-39330.herokuapp.com/api/airtable/criteria')
+    axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/criteria')
           .then(res => {
             console.log(res.data)
             console.log(`Criteria: ${res.data}`)
