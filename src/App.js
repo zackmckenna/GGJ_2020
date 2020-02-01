@@ -75,7 +75,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
-            <Route exact path="/prompt" render={() => {
+            <Route exact path="/GGJ_2020/prompt" render={() => {
               return (
                 <Prompt
                   players={players}
