@@ -13,22 +13,59 @@ import axios from 'axios'
 function App() {
   const [players, setPlayers] = useState(0)
   const [playerNames, setPlayerNames] = useState([])
-  const [airtableData, setAirtableData] = useState([])
+  const [parts, setParts] = useState([])
+  const [components, setComponents] = useState([])
+  const [criteria, setCriteria] = useState([])
+
 
   useEffect(() => {
-    axios.get('https://api.airtable.com/v0/apprkbgfXPMCZlFFR/Parts?api_key=keyLErx2N17rFxZOY')
+    axios.get('http://guarded-ridge-39330.herokuapp.com/api/airtable/parts')
+        .then(res => {
+          console.log(res)
+          console.log(res.data)
+          console.log(`Parts: ${res.data}`)
+          res.data.map(part => {
+            console.log(part)
+            const newPart = part
+            setParts(parts => [...parts, newPart])
+          })
+        })
+
+    axios.get('http://guarded-ridge-39330.herokuapp.com/api/airtable/components')
         .then(res => {
           console.log(res.data)
-          setAirtableData( res.data)
+          res.data.map(component => {
+            const newComponent = component
+            setComponents(components => [...components, newComponent])
+          })
         })
+
+    axios.get('http://guarded-ridge-39330.herokuapp.com/api/airtable/criteria')
+          .then(res => {
+            console.log(res.data)
+            console.log(`Criteria: ${res.data}`)
+            res.data.map(criteria => {
+              if (criteria.Name) {
+                const newCriteria = criteria
+                setCriteria(criteria => [...criteria, newCriteria])
+              }
+            })
+          })
   }, [])
 
   const handlePlayerChange = async event => {
     setPlayers(event.target.value)
-    console.log(airtableData)
-    // console.log(base)
-    // const parts = airtableService.getParts()
-    // console.log(parts)
+    parts.map(part => {
+      console.log(part.Name)
+    })
+    components.map(component => {
+      if (component.Attachments) {
+        console.log(component.Attachments[0].url)
+      }
+    })
+    criteria.map(criteria => {
+      console.log(criteria)
+    })
   }
   // six items
   return (
@@ -37,7 +74,14 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
-            <Route path="/prompt" render={() => <Prompt players={players} />}/>
+            <Route path="/prompt" render={() => {
+              return (
+                <Prompt
+                  players={players}
+                  parts={parts}
+                  criteria={criteria}/>
+              )}
+            }/>
             <Route path="/components" render={() => <Components players={players} />} />
           </Switch>
         </Router>
