@@ -75,7 +75,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path={process.env.PUBLIC_URL + '/'} render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
-            <Route path="/prompt" render={() => {
+            <Route path={process.env.PUBLIC_URL+ "/prompt"} render={() => {
               return (
                 <Prompt
                   players={players}
@@ -83,7 +83,7 @@ function App() {
                   criteria={criteria}/>
               )}
             }/>
-            <Route path="/components" render={() => <Components players={players} />} />
+            <Route path={process.env.PUBLIC_URL + "/components"} render={() => <Components players={players} />} />
           </Switch>
         </Router>
       </header>
