@@ -75,7 +75,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/" render={() => <StartPage players={players} handlePlayerChange={handlePlayerChange} />} />
-            <Route path="/prompt" render={() => {
+            <Route exact path="/prompt" render={() => {
               return (
                 <Prompt
                   players={players}
@@ -83,7 +83,7 @@ function App() {
                   criteria={criteria}/>
               )}
             }/>
-            <Route path="/components" render={() => <Components players={players} />} />
+            <Route exact path="/components" render={() => <Components players={players} />} />
           </Switch>
         </Router>
       </header>
