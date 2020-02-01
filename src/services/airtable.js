@@ -1,11 +1,15 @@
-var Airtable = require('airtable').base('apprkbgfXPMCZlFFR');
+var Airtable = require('airtable');
+var base = new Airtable({apiKey: 'keyLErx2N17rFxZOY'}).base('apprkbgfXPMCZlFFR');
 
-Airtable.configure({
-  endpointUrl:
-  'https://api.airtable.com',
-    apiKey: 'keyLErx2N17rFxZOY'
+let parts = []
+
+base('Parts').select({}).eachPage(function page(records, fetchNextPage) {
+    records.forEach(function(record) {
+        console.log(record)
+        parts.concat(record.get('Name'))
+    });
+    fetchNextPage();
+}, function done(err) {
+    if (err) { console.error(err); return; }
 });
 
-var base = Airtable.base('apprkbgfXPMCZlFFR');
-
-export default base
