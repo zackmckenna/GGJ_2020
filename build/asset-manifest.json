@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/GGJ_2020/static/css/main.d1b05096.chunk.css",
+    "main.js": "/GGJ_2020/static/js/main.7a8c1267.chunk.js",
+    "main.js.map": "/GGJ_2020/static/js/main.7a8c1267.chunk.js.map",
+    "runtime-main.js": "/GGJ_2020/static/js/runtime-main.d8aba86a.js",
+    "runtime-main.js.map": "/GGJ_2020/static/js/runtime-main.d8aba86a.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/GGJ_2020/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.487f0658.chunk.js": "/GGJ_2020/static/js/2.487f0658.chunk.js",
+    "static/js/2.487f0658.chunk.js.map": "/GGJ_2020/static/js/2.487f0658.chunk.js.map",
+    "index.html": "/GGJ_2020/index.html",
+    "precache-manifest.3b8441939a9421227526ecb9498859ce.js": "/GGJ_2020/precache-manifest.3b8441939a9421227526ecb9498859ce.js",
+    "service-worker.js": "/GGJ_2020/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/GGJ_2020/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.d1b05096.chunk.css.map": "/GGJ_2020/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.487f0658.chunk.js.LICENSE.txt": "/GGJ_2020/static/js/2.487f0658.chunk.js.LICENSE.txt",
+    "static/media/ggjLogo.svg": "/GGJ_2020/static/media/ggjLogo.46710f3b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d8aba86a.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.487f0658.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.7a8c1267.chunk.js"
+  ]
+}
