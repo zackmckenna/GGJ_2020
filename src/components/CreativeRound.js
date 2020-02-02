@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Card, Jumbotron, Navbar, Row, Col } from 'react-bootstrap'
+import { Container, Card, Jumbotron, Navbar, Button, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import InventoryItemCard from './InventoryItemCard'
 import InventoryGrid from './InventoryGrid'
+import Timer from './Timer'
 
-const CreativeRound = ({ timerCounter, setTimerCounter, players, playerNames, playerObjects, components, judgeIndex }) => {
+const CreativeRound = ({ timerCounter, handleRestartClick, players, playerNames, playerObjects, components, judgeIndex }) => {
   const [componentArray, setComponentArray] = useState([])
 
-  useEffect(() => {
-    // const updateCountdown = () => {
-    //   console.log(timerCounter)
-    //   if (timerCounter > 0) {
-    //     setTimerCounter(timerCounter => timerCounter - 1)
-    //     console.log(timerCounter)
-    //   } else {
-    //     clearInterval(timer)
-    //   }
-    // }
-    // var timer = setInterval(updateCountdown, 1000)
 
-  }, [])
   console.log(playerObjects)
   console.log(timerCounter)
 
@@ -56,6 +46,10 @@ const CreativeRound = ({ timerCounter, setTimerCounter, players, playerNames, pl
 
   return (
     <>
+    <Timer seconds={120}/>
+    <Link to={process.env.PUBLIC_URL + '/prompt'}>
+      <Button onClick={(event) => handleRestartClick(event)}>Restart Game</Button>
+    </Link>
     <Container>
       <Row>
         <Col>

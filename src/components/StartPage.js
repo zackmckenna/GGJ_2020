@@ -25,15 +25,19 @@ const StartPage = ({
   judgeIndex
 })=> {
 
-  const handleClick = () => {
+  const handleClickStart = () => {
     console.log('clicked')
     setJudgeName(playerObjects[judgeIndex].name)
     // props.history.push('/prompt')
   }
 
+  const handleClick = event => {
+    event.preventDefault()
+    handleNameSubmit(event)
+  }
+
   const handleNameInputChange = event => {
     setNameInput(event.target.value)
-    console.log(nameInput)
   }
 
   return (
@@ -58,13 +62,6 @@ Due to this need multiple repair shops have emerged in the station, of varying q
 <p></p>
 
       <p>Add up to 5 Players</p>
-      <ul>
-      {playerObjects.map((player, index) => {
-        return (
-          <li key={index}>{player.name}</li>
-        )
-      })}
-      </ul>
     {/* <Form onChange={event => handlePlayerChange(event)}>
     <Form.Group controlId="exampleForm.ControlSelect2">
     <Form.Label>Select Number of Players</Form.Label>
@@ -79,17 +76,24 @@ Due to this need multiple repair shops have emerged in the station, of varying q
     {playerObjects.length <= 4 ? <Form onChange={(event) => handleNameInputChange(event)}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>player name</Form.Label>
-        <Form.Control type="text" placeholder="player name" />
+        <Form.Control value={nameInput} type="text" placeholder="player name" />
         {/* <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text> */}
+        <Button type='submit' onClick={(event) => {event.preventDefault(); handleClick(event)}}>Add Player</Button>
       </Form.Group>
-      <Button onClick={(event) => handleNameSubmit(event)}>Add Player</Button>
     </Form> : null}
 
+    <ul>
+      {playerObjects.map((player, index) => {
+        return (
+          <li key={index}>{player.name}</li>
+        )
+      })}
+      </ul>
 
     <Link to={process.env.PUBLIC_URL + '/prompt'}>
-      <Button onClick={() => handleClick()}>Start Game</Button>
+      <Button onClick={() => handleClickStart()}>Start Game</Button>
     </Link>
     </>
   )
