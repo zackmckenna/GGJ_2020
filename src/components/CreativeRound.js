@@ -30,7 +30,7 @@ const CreativeRound = ({ timerCounter, setTimerCounter, players, playerNames, pl
 
   const boxMaker = (index) => {
     if (playerObjects[index]){
-      if (judgeIndex !== index){
+      if (judgeIndex !== index && !(judgeIndex < index)){
         //do player index
         return (<InventoryGrid player={playerObjects[index]}/>)
       }else{
