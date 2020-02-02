@@ -1,12 +1,27 @@
 import React from 'react'
-import { Col, Row, Container, Button, FormGroup } from 'react-bootstrap'
+import { Col, Row, Container, Button, Form } from 'react-bootstrap'
 import InventoryItemCard from './InventoryItemCard'
 import { Link } from 'react-router-dom'
 const InventoryGrid = ({ player, handleScoreClick }) => {
   console.log(player)
   return (
-  <>
-      <Row >
+  <div className='border border-light'>
+    <Form>
+      <Form.Row>
+        <Col>
+          <h5 className='text-nowrap'>{player.name}</h5>
+        </Col>
+        <Col>
+          <h5 className='text-nowrap'> Score: {player.score} </h5>
+        </Col>
+        <Col>
+          <Link to={process.env.PUBLIC_URL + '/prompt'}>
+            <Button className='btn-success text-nowrap' onClick={() => handleScoreClick(player)}>Award Contract</Button>
+          </Link>
+        </Col>
+      </Form.Row>
+    </Form>
+      {/* <Row >
         <Col className='text-nowrap'>
           <h5 className='text-nowrap'>{player.name}</h5>
         </Col>
@@ -22,7 +37,7 @@ const InventoryGrid = ({ player, handleScoreClick }) => {
             <Button className='btn-success text-nowrap' onClick={() => handleScoreClick(player)}>Award Contract</Button>
           </Link>
         </Col>
-      </Row>
+      </Row> */}
       <Container >
         <Row className='border border-light'>
           <Col>
@@ -47,7 +62,7 @@ const InventoryGrid = ({ player, handleScoreClick }) => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   )
 }
 
