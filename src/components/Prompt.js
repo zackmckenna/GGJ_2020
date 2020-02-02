@@ -18,7 +18,7 @@ function getRandomImage(imgAr, path) {
 }
 
 
-const Prompt = ({ players, playerObjects, playerNames, parts, criteria }) => {
+const Prompt = ({ players, playerObjects, setTimeLeft, parts, criteria, setIsTimer }) => {
 
   const grabRandomPart = () => {
     if (parts){
@@ -26,6 +26,10 @@ const Prompt = ({ players, playerObjects, playerNames, parts, criteria }) => {
     } else {
       return 'Error'
     }
+  }
+
+  const handleClick = () => {
+    console.log('clicked')
   }
 
   const grabRandomCriteria = () => {
@@ -45,7 +49,7 @@ const Prompt = ({ players, playerObjects, playerNames, parts, criteria }) => {
       <h2>There are {playerObjects.length} players.</h2>
       <div>
         <Link to={process.env.PUBLIC_URL + '/components'}>
-          <Button >Start Game</Button>
+          <Button onClick={() => handleClick()}>Start Game</Button>
         </Link>
       </div>
     </>
