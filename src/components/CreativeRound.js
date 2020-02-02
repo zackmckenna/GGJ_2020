@@ -18,8 +18,8 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
       var rand
       do{
         rand = Math.floor(Math.random() * components.length);
-        compVals.add(rand)
-      }while(!compVals.has(rand))
+      }while(compVals.has(rand))
+      compVals.add(rand)
       
       player.components[i] = components[rand]
     }

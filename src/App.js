@@ -58,7 +58,7 @@ function App() {
   }, [])
 
   const incrementJudge = () => {
-    if (judgeIndex >= playerObjects.length){
+    if (judgeIndex >= playerObjects.length-1){
       setJudgeIndex(0)
     } else {
       setJudgeIndex(judgeIndex + 1)
