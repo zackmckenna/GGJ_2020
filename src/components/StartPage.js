@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, Row, Col } from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
 
 
@@ -66,25 +66,28 @@ Due to this need multiple repair shops have emerged in the station, of varying q
 <p>Get ready to craft some space stuff!</p>
 <p></p>
 <p></p>
-    
+
     {playerObjects.length <= 4 ? <Form onChange={(event) => handleNameInputChange(event)}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Add 3-5 Players:</Form.Label>
-        <Form.Control value={nameInput} type="text" placeholder="player name" />
-        {/* <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text> */}
-        <Button type='submit' onClick={(event) => {event.preventDefault(); handleClick(event)}}>Add Player</Button>
+        <Row>
+          <Col>
+            <Form.Control value={nameInput} type="text" placeholder="player name"/>
+          </Col>
+          <Col>
+            <Button type='submit' onClick={(event) => {event.preventDefault(); handleClick(event)}}>Add Player</Button>
+          </Col>
+        </Row>
       </Form.Group>
     </Form> : null}
 
     <ul>
       {playerObjects.map((player, index) => {
         return (
-          <li key={index}>{player.name}</li>
+          <p key={index}>{player.name}</p>
         )
       })}
-      </ul>
+    </ul>
 
     <Link to={process.env.PUBLIC_URL + '/prompt'}>
       <Button onClick={() => handleClickStart()}>Start Game</Button>

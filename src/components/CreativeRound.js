@@ -46,7 +46,7 @@ const CreativeRound = ({ timerCounter, gameState, handleRestartGame, handleScore
 
   return (
     <>
-    <Row className='border border-light'>
+    <Row className='mb-3 border border-light'>
       <Col className='text-nowrap'>
         <h5>{gameState.prompt}</h5>
       </Col>
