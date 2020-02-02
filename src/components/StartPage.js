@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Button, Form } from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
@@ -20,11 +20,14 @@ const StartPage = ({
   nameInput,
   handleNameSubmit,
   playerNames,
-  playerObjects
+  playerObjects,
+  setJudgeName,
+  judgeIndex
 })=> {
 
   const handleClick = () => {
     console.log('clicked')
+    setJudgeName(playerObjects[judgeIndex].Name)
     // props.history.push('/prompt')
   }
 

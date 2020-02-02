@@ -15,6 +15,7 @@ function App() {
   const [players, setPlayers] = useState(0)
   const [playerObjects, setPlayerObjects] = useState([])
   const [judgeIndex, setJudgeIndex] = useState(0)
+  const [judgeName, setJudgeName] = useState('No judge yet')
   const [playerNames, setPlayerNames] = useState([])
   const [parts, setParts] = useState([])
   const [components, setComponents] = useState([])
@@ -53,6 +54,14 @@ function App() {
           })
   }, [])
 
+  const incrementJudge = () => {
+    if (judgeIndex >= playerObjects.length){
+      setJudgeIndex(0)
+    } else {
+      setJudgeIndex(judgeIndex + 1)
+    }
+  }
+
   const handleNameSubmit = event => {
     event.preventDefault()
     const newPlayerObject = {
@@ -67,15 +76,11 @@ function App() {
     console.log('Player Objects:', playerObjects)
   }
 
-
-  // const countdown = async time => {
-  //   debugger
-  //   let currentTime = time
-  //   setTimerCounter(time)
-  //   if(currentTime > 0 ){
-  //     setTimeout(() => {
-  //       countdown(currentTime - 1)
-  //     }, 1000)
+  // const judgeName = () => {
+  //   if (playerObjects[judgeIndex]) {
+  //     return playerObjects[judgeIndex].Name
+  //   } else {
+  //     return 'No judge yet'
   //   }
   // }
 
@@ -86,7 +91,7 @@ function App() {
   return (
     <div className="App">
         <Navbar className='sticky-top' bg="light">
-          <Navbar.Brand href="#home">JUDGE   TIME: {timerCounter} </Navbar.Brand>
+          <Navbar.Brand href="#home">Judge: {judgeName} TIME: {timerCounter} </Navbar.Brand>
         </Navbar>
       <header className="App-header">
         <BackgroundMusic/>
@@ -102,6 +107,8 @@ function App() {
                   handleNameSubmit={handleNameSubmit}
                   playerNames={playerNames}
                   playerObjects={playerObjects}
+                  setJudgeName={setJudgeName}
+                  judgeIndex={judgeIndex}
                   />
               )}
             }/>
@@ -122,7 +129,10 @@ function App() {
                   players={players}
                   playerNames={playerNames}
                   components={components}
-                  // countdown={countdown}
+                  timerCounter={timerCounter}
+                  setTimerCounter={setTimerCounter}
+                  playerObjects={playerObjects}
+                  judgeIndex={judgeIndex}
                   />
               )
               }}/>
