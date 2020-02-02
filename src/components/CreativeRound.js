@@ -13,8 +13,15 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
   console.log(timerCounter)
 
   const roundPlayers = playerObjects.map(player => {
+    var compVals = new Set()
     for (let i = 0; i < 6; i++) {
-      player.components[i] = components[Math.floor(Math.random() * components.length)]
+      var rand
+      do{
+        rand = Math.floor(Math.random() * components.length);
+        compVals.add(rand)
+      }while(!compVals.has(rand))
+      
+      player.components[i] = components[rand]
     }
   })
 
