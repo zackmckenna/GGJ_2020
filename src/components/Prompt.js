@@ -75,7 +75,7 @@ const Prompt = ({ players, playerObjects, judgeIndex, parts, criteria, judgeName
   return (
     <>
       <h4>Client: <span className='text-primary font-weight-bold'>{playerObjects[judgeIndex].name}</span></h4>
-      <img src={imageStr} className="App-logo" alt="logo" />
+      <img src={imageStr} style={{ maxHeight: '500px'}} alt="logo" />
       <h1>
         I need a <span className='text-danger'>{part}</span> that <span className='text-warning'>{crit}</span>.
       </h1>

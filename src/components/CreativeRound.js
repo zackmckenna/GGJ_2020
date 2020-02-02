@@ -46,21 +46,21 @@ const CreativeRound = ({ timerCounter, gameState, handleRestartGame, handleScore
 
   return (
     <>
-    <Row>
-      <Col>
-        <Timer seconds={120}/>
+    <Row className='border border-light'>
+      <Col className='text-nowrap'>
+        <h5>{gameState.prompt}</h5>
       </Col>
-      <Col>
+      <Col className='text-nowrap'>
         <h5>Client: {playerObjects[judgeIndex].name}</h5>
       </Col>
       <Col>
+        <Timer seconds={120}/>
+      </Col>
+      <Col className='text-nowrap'>
         <Link to={process.env.PUBLIC_URL + '/'}>
-          <Button onClick={() => handleRestartGame()}>New Game</Button>
+          <Button className='text-nowrap' onClick={() => handleRestartGame()}>New Game</Button>
         </Link>
       </Col>
-    </Row>
-    <Row>
-      <h5>{gameState.prompt}</h5>
     </Row>
     <Container>
       <Row>
