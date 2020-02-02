@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Navbar } from 'react-bootstrap'
+import { Navbar, Form, Button, FormControl } from 'react-bootstrap'
 import { BrowserRouter as Router,
         Switch,
         Route } from 'react-router-dom'
@@ -63,17 +63,20 @@ function App() {
   }
 
   const handleNameSubmit = event => {
+    console.log(event)
     event.preventDefault()
-    const newPlayerObject = {
-      name: nameInput,
-      components: [],
-      score: 0
+    if (nameInput !== ''){
+      const newPlayerObject = {
+        name: nameInput,
+        components: [],
+        score: 0
+      }
+      setPlayerObjects([...playerObjects, newPlayerObject])
+      setPlayerNames(playerNames => [...playerNames, nameInput])
+      setNameInput('')
+      event.target.value = ''
+      console.log('Player Objects:', playerObjects)
     }
-    setPlayerObjects([...playerObjects, newPlayerObject])
-    setPlayerNames(playerNames => [...playerNames, nameInput])
-    setNameInput('')
-    event.target.value = ''
-    console.log('Player Objects:', playerObjects)
   }
 
   // const judgeName = () => {
@@ -92,6 +95,9 @@ function App() {
     <div className="App">
         <Navbar className='sticky-top' bg="light">
           <Navbar.Brand href="#home">Judge: {judgeName} TIME: {timerCounter} </Navbar.Brand>
+          <Form inline>
+            <Button type="submit">Next Round</Button>
+          </Form>
         </Navbar>
       <header className="App-header">
         <BackgroundMusic/>

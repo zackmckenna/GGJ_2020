@@ -6,7 +6,7 @@ const InventoryGrid = ({ player }) => {
   console.log(player)
   return (
     <>
-      <h6>{player.name}</h6>
+      <h5>{player.name}</h5>
       <Container >
         <Row className='border border-light'>
           <Col>
