@@ -20,7 +20,7 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
         rand = Math.floor(Math.random() * components.length);
       }while(compVals.has(rand))
       compVals.add(rand)
-      
+
       player.components[i] = components[rand]
     }
   })
@@ -51,7 +51,7 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
         <Timer seconds={120}/>
       </Col>
       <Col>
-        <h5>Judge: {playerObjects[judgeIndex].name}</h5>
+        <h5>Client: {playerObjects[judgeIndex].name}</h5>
       </Col>
       <Col>
         <Link to={process.env.PUBLIC_URL + '/prompt'}>
@@ -60,7 +60,7 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
       </Col>
       <Col>
         <Link to={process.env.PUBLIC_URL + '/'}>
-          <Button onClick={() => handleRestartGame()}>Restart Game</Button>
+          <Button onClick={() => handleRestartGame()}>New Game</Button>
         </Link>
       </Col>
     </Row>

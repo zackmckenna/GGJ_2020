@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Jumbotron } from 'react-bootstrap'
 
 
 //todo:
@@ -42,7 +42,7 @@ const Prompt = ({ players, playerObjects, judgeIndex, setTimeLeft, parts, criter
 
   return (
     <>
-      <h5>The Judge is: {playerObjects[judgeIndex].name}</h5>
+      <h4>Client: <span className='text-primary font-weight-bold'>{playerObjects[judgeIndex].name}</span></h4>
       <img src={getRandomImage(customerPix, '/images/scenarios/')} className="App-logo" alt="logo" />
       <h1>
         I need a <span className='text-danger'>{grabRandomPart()}</span> that <span className='text-warning'>{grabRandomCriteria()}</span>.
