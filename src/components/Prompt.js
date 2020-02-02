@@ -81,7 +81,7 @@ const Prompt = ({ players, playerObjects, judgeIndex, parts, criteria, judgeName
       </h1>
       <div>
         <Link to={process.env.PUBLIC_URL + '/components'}>
-          <Button onClick={() => handleClick()}>Start Game</Button>
+          <Button onClick={() => handleClick()}>Start Bidding</Button>
         </Link>
       </div>
     </>
