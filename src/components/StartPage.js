@@ -27,7 +27,7 @@ const StartPage = ({
 
   const handleClick = () => {
     console.log('clicked')
-    setJudgeName(playerObjects[judgeIndex].Name)
+    setJudgeName(playerObjects[judgeIndex].name)
     // props.history.push('/prompt')
   }
 

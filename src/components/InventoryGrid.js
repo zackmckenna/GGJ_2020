@@ -3,15 +3,11 @@ import { Col, Row, Container } from 'react-bootstrap'
 import InventoryItemCard from './InventoryItemCard'
 
 const InventoryGrid = ({ player }) => {
-
+  console.log(player)
   return (
     <>
+      <h6>{player.name}</h6>
       <Container >
-        <Row>
-          <Col>
-            <h2 className='text-light'>{player.Name}</h2>
-          </Col>
-        </Row>
         <Row className='border border-light'>
           <Col>
             <InventoryItemCard component={player.components[0]}/>

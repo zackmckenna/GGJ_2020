@@ -2,13 +2,12 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 
 const InventoryItemCard = ({ component }) => {
-  console.log(component)
   if (component.Attachments){
     return (
-      <Card style={{ width: '10rem' }}>
-        <Card.Img style={{ width: '100px', height: '100px'}} variant="top" src={component.Attachments[0].url} />
+      <Card style={{ width: '8rem' }}>
+        <Card.Img fluid className='text-center' style={{ width: '100px', height: '100px'}} variant="top" src={component.Attachments[0].url} />
         <Card.Body>
-          <Card.Title className='text-dark'>{component.Name}</Card.Title>
+          <Card.Text className='text-dark'>{component.Name}</Card.Text>
           {/* <Card.Text>
             {component.Name}
           </Card.Text> */}

@@ -35,36 +35,38 @@ const CreativeRound = ({ timerCounter, setTimerCounter, players, playerNames, pl
         return (<InventoryGrid player={playerObjects[index]}/>)
       }else{
         //do player index+1
-        return (<InventoryGrid player={playerObjects[index+1]}/>)
+        if (playerObjects[index + 1]){
+          return (<InventoryGrid player={playerObjects[index+1]}/>)
+        } else {
+          return
+        }
       }
     } else {
-      return (
-        <>
-        </>
-      )
+      return
     }
 
   }
 
   return (
     <>
-
-    <Row>
-      <Col>
-        {boxMaker(0)}
-      </Col>
-      <Col>
-        {boxMaker(1)}
-      </Col>
-    </Row>
-    <Row>
-      <Col>
-        {boxMaker(2)}
-      </Col>
-      <Col>
-        {boxMaker(3)}
-      </Col>
-    </Row>
+    <Container>
+      <Row>
+        <Col>
+          {boxMaker(0)}
+        </Col>
+        <Col>
+          {boxMaker(1)}
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          {boxMaker(2)}
+        </Col>
+        <Col>
+          {boxMaker(3)}
+        </Col>
+      </Row>
+    </Container>
 
       {/* <Jumbotron>
         {components.map((component, index) => {
