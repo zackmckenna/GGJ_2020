@@ -47,7 +47,7 @@ const StartPage = ({
 
   return (
     <>
-    Space Station Gizmo Guy!
+    <p>Gornath Crafters Guild: <i>Bidding Challenge</i>!</p>
       <img src={getRandomImage(introPix, '/images/intros/')} className="App-logo" alt="logo" />
       <Button onClick={(event) => {handleAudioClick(event)}}>Play/Pause Music</Button>
       <p></p>
@@ -66,22 +66,10 @@ Due to this need multiple repair shops have emerged in the station, of varying q
 <p>Get ready to craft some space stuff!</p>
 <p></p>
 <p></p>
-
-      <p>Add up to 5 Players</p>
-    {/* <Form onChange={event => handlePlayerChange(event)}>
-    <Form.Group controlId="exampleForm.ControlSelect2">
-    <Form.Label>Select Number of Players</Form.Label>
-    <Form.Control as="select" multiple>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-    </Form.Control>
-  </Form.Group>
-    </Form> */}
+    
     {playerObjects.length <= 4 ? <Form onChange={(event) => handleNameInputChange(event)}>
       <Form.Group controlId="formBasicEmail">
-        <Form.Label>player name</Form.Label>
+        <Form.Label>Add 3-5 Players:</Form.Label>
         <Form.Control value={nameInput} type="text" placeholder="player name" />
         {/* <Form.Text className="text-muted">
           We'll never share your email with anyone else.
