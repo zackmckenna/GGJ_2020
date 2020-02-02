@@ -10,7 +10,7 @@ import Prompt from './components/Prompt'
 import StartPage from './components/StartPage'
 import CreativeRound from './components/CreativeRound'
 import axios from 'axios'
-import BackgroundMusic from './components/MyComponentWithSound'
+import BackgroundMusic from './components/MULTIComponentWithSound'
 import Timer from './components/Timer'
 
 function App() {
