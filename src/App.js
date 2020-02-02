@@ -52,6 +52,7 @@ function App() {
               }
             })
           })
+
   }, [])
 
   const incrementJudge = () => {
@@ -94,7 +95,6 @@ function App() {
           <Navbar.Brand href="#home">Judge: {judgeName} TIME: {timerCounter} </Navbar.Brand>
         </Navbar>
       <header className="App-header">
-        <BackgroundMusic/>
         <Router>
           <Switch>
             <Route exact path={process.env.PUBLIC_URL + "/"} render={() => {
