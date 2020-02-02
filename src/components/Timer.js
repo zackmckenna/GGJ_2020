@@ -22,7 +22,7 @@ const Timer = ({ seconds }) => {
 
   return (
     <div>
-      <h4>Time Left: {timeLeft}</h4>
+      <h6>Time Left: {timeLeft}</h6>
     </div>
   );
 };

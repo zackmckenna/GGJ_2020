@@ -89,6 +89,10 @@ function App() {
     }
   }
 
+  const handleRestartGame = () => {
+    setPlayerObjects([])
+  }
+
   // const judgeName = () => {
   //   if (playerObjects[judgeIndex]) {
   //     return playerObjects[judgeIndex].Name
@@ -103,9 +107,9 @@ function App() {
   // six items
   return (
     <div className="App">
-        <Navbar className='sticky-top' bg="light">
+        {/* <Navbar className='sticky-top' bg="light">
           <Navbar.Brand href="#home">Judge: {judgeName} </Navbar.Brand>
-        </Navbar>
+        </Navbar> */}
       <header className="App-header">
         <Router>
           <Switch>
@@ -134,6 +138,8 @@ function App() {
                   playerNames={playerNames}
                   playerObjects={playerObjects}
                   setTimeLeft={setTimeLeft}
+                  judgeName={judgeName}
+                  judgeIndex={judgeIndex}
                   />
 
               )}
@@ -147,6 +153,9 @@ function App() {
                   playerObjects={playerObjects}
                   judgeIndex={judgeIndex}
                   handleRestartClick={handleRestartClick}
+                  judgeName={judgeName}
+                  judgeIndex={judgeIndex}
+                  handleRestartGame={handleRestartGame}
                   />
               )
               }}/>

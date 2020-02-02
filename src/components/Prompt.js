@@ -18,7 +18,7 @@ function getRandomImage(imgAr, path) {
 }
 
 
-const Prompt = ({ players, playerObjects, setTimeLeft, parts, criteria, setIsTimer }) => {
+const Prompt = ({ players, playerObjects, judgeIndex, setTimeLeft, parts, criteria, judgeName, setIsTimer }) => {
 
   const grabRandomPart = () => {
     if (parts){
@@ -42,11 +42,11 @@ const Prompt = ({ players, playerObjects, setTimeLeft, parts, criteria, setIsTim
 
   return (
     <>
+      <h5>The Judge is: {playerObjects[judgeIndex].name}</h5>
       <img src={getRandomImage(customerPix, '/images/scenarios/')} className="App-logo" alt="logo" />
       <h1>
         I need a <span className='text-danger'>{grabRandomPart()}</span> that <span className='text-warning'>{grabRandomCriteria()}</span>.
       </h1>
-      <h2>There are {playerObjects.length} players.</h2>
       <div>
         <Link to={process.env.PUBLIC_URL + '/components'}>
           <Button onClick={() => handleClick()}>Start Game</Button>

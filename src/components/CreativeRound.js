@@ -5,7 +5,7 @@ import InventoryItemCard from './InventoryItemCard'
 import InventoryGrid from './InventoryGrid'
 import Timer from './Timer'
 
-const CreativeRound = ({ timerCounter, handleRestartClick, players, playerNames, playerObjects, components, judgeIndex }) => {
+const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleRestartClick, players, playerNames, playerObjects, components, judgeIndex }) => {
   const [componentArray, setComponentArray] = useState([])
 
 
@@ -39,10 +39,24 @@ const CreativeRound = ({ timerCounter, handleRestartClick, players, playerNames,
 
   return (
     <>
-    <Timer seconds={120}/>
-    <Link to={process.env.PUBLIC_URL + '/prompt'}>
-      <Button onClick={(event) => handleRestartClick(event)}>Restart Game</Button>
-    </Link>
+    <Row>
+      <Col>
+        <Timer seconds={120}/>
+      </Col>
+      <Col>
+        <h5>Judge: {playerObjects[judgeIndex].name}</h5>
+      </Col>
+      <Col>
+        <Link to={process.env.PUBLIC_URL + '/prompt'}>
+          <Button onClick={() => handleRestartClick()}>Next Round</Button>
+        </Link>
+      </Col>
+      <Col>
+        <Link to={process.env.PUBLIC_URL + '/'}>
+          <Button onClick={() => handleRestartGame()}>Restart Game</Button>
+        </Link>
+      </Col>
+    </Row>
     <Container>
       <Row>
         <Col>
