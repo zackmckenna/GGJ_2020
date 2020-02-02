@@ -5,7 +5,7 @@ import InventoryItemCard from './InventoryItemCard'
 import InventoryGrid from './InventoryGrid'
 import Timer from './Timer'
 
-const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleRestartClick, players, playerNames, playerObjects, components, judgeIndex }) => {
+const CreativeRound = ({ timerCounter, gameState, handleRestartGame, handleScoreClick, handleRestartClick, players, playerNames, playerObjects, components, judgeIndex }) => {
   const [componentArray, setComponentArray] = useState([])
 
 
@@ -20,7 +20,7 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
         rand = Math.floor(Math.random() * components.length);
       }while(compVals.has(rand))
       compVals.add(rand)
-      
+
       player.components[i] = components[rand]
     }
   })
@@ -29,11 +29,11 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
     if (playerObjects[index]){
       if (judgeIndex !== index && !(judgeIndex < index)){
         //do player index
-        return (<InventoryGrid player={playerObjects[index]}/>)
+        return (<InventoryGrid handleScoreClick={handleScoreClick} player={playerObjects[index]}/>)
       }else{
         //do player index+1
         if (playerObjects[index + 1]){
-          return (<InventoryGrid player={playerObjects[index+1]}/>)
+          return (<InventoryGrid handleScoreClick={handleScoreClick} player={playerObjects[index+1]}/>)
         } else {
           return
         }
@@ -51,18 +51,16 @@ const CreativeRound = ({ timerCounter, judgeName, handleRestartGame, handleResta
         <Timer seconds={120}/>
       </Col>
       <Col>
-        <h5>Judge: {playerObjects[judgeIndex].name}</h5>
-      </Col>
-      <Col>
-        <Link to={process.env.PUBLIC_URL + '/prompt'}>
-          <Button onClick={() => handleRestartClick()}>Next Round</Button>
-        </Link>
+        <h5>Client: {playerObjects[judgeIndex].name}</h5>
       </Col>
       <Col>
         <Link to={process.env.PUBLIC_URL + '/'}>
-          <Button onClick={() => handleRestartGame()}>Restart Game</Button>
+          <Button onClick={() => handleRestartGame()}>New Game</Button>
         </Link>
       </Col>
+    </Row>
+    <Row>
+      <h5>{gameState.prompt}</h5>
     </Row>
     <Container>
       <Row>

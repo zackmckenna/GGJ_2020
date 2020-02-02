@@ -1,12 +1,17 @@
 import React from 'react'
-import { Col, Row, Container } from 'react-bootstrap'
+import { Col, Row, Container, Button } from 'react-bootstrap'
 import InventoryItemCard from './InventoryItemCard'
-
-const InventoryGrid = ({ player }) => {
+import { Link } from 'react-router-dom'
+const InventoryGrid = ({ player, handleScoreClick }) => {
   console.log(player)
   return (
     <>
-      <h5>{player.name}</h5>
+      <Row>
+      <h5>{player.name} {player.score}</h5>
+        <Link to={process.env.PUBLIC_URL + '/prompt'}>
+          <Button onClick={() => handleScoreClick(player)}>Award Contract</Button>
+        </Link>
+      </Row>
       <Container >
         <Row className='border border-light'>
           <Col>

@@ -25,8 +25,13 @@ function App() {
   const [nameInput, setNameInput] = useState('')
   const [timeLeft, setTimeLeft] = useState(0);
   const [soundToggle, setSoundToggle] = useState(false);
+  const [gameState, setGameState] = useState([])
 
   useEffect(() => {
+    const newGameState = {
+      prompt: ''
+    }
+    setGameState(newGameState)
     axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/parts')
         .then(res => {
           console.log('Parts', res.data)
@@ -58,6 +63,21 @@ function App() {
 
   }, [])
 
+  const handleScoreClick = playerClicked => {
+    incrementJudge()
+    if (playerObjects[judgeIndex]){
+      setJudgeName(playerObjects[judgeIndex].name)
+    }
+    console.log(playerClicked)
+    let newPlayerObjects = playerObjects
+    newPlayerObjects.map(player => {
+      if (player === playerClicked) {
+        player.score++
+        }
+      })
+    setPlayerObjects(newPlayerObjects)
+  }
+
   const incrementJudge = () => {
     if (judgeIndex >= playerObjects.length-1){
       setJudgeIndex(0)
@@ -66,17 +86,19 @@ function App() {
     }
   }
 
-  const handleRestartClick = () => {
-    incrementJudge()
-    if (playerObjects[judgeIndex]){
-      setJudgeName(playerObjects[judgeIndex].name)
-    }
-  }
+  // const handleRestartClick = () => {
+  //   incrementJudge()
+  //   if (playerObjects[judgeIndex]){
+  //     setJudgeName(playerObjects[judgeIndex].name)
+  //   }
+  // }
 
   const handleNameSubmit = event => {
     console.log(event)
     event.preventDefault()
-    if (nameInput !== ''){
+    let playerNameArray = playerObjects.map(player => player.name)
+    console.log(playerNameArray)
+    if (nameInput !== '' && (!playerNameArray.includes(nameInput))){
       const newPlayerObject = {
         name: nameInput,
         components: [],
@@ -87,6 +109,7 @@ function App() {
       setNameInput('')
       event.target.value = ''
       console.log('Player Objects:', playerObjects)
+      console.log(gameState)
     }
   }
 
@@ -132,6 +155,7 @@ function App() {
                   setJudgeName={setJudgeName}
                   judgeIndex={judgeIndex}
                   handleToggleSound={handleToggleSound}
+                  gameState={gameState}
                   />
               )}
             }/>
@@ -147,6 +171,8 @@ function App() {
                   setTimeLeft={setTimeLeft}
                   judgeName={judgeName}
                   judgeIndex={judgeIndex}
+                  gameState={gameState}
+                  setGameState={setGameState}
                   />
 
               )}
@@ -159,10 +185,11 @@ function App() {
                   components={components}
                   playerObjects={playerObjects}
                   judgeIndex={judgeIndex}
-                  handleRestartClick={handleRestartClick}
                   judgeName={judgeName}
                   judgeIndex={judgeIndex}
                   handleRestartGame={handleRestartGame}
+                  gameState={gameState}
+                  handleScoreClick={handleScoreClick}
                   />
               )
               }}/>

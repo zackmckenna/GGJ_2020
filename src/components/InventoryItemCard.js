@@ -4,8 +4,8 @@ import { Card } from 'react-bootstrap'
 const InventoryItemCard = ({ component }) => {
   if (component.Attachments){
     return (
-      <Card style={{ width: '8rem' }}>
-        <Card.Img fluid className='text-center' style={{ width: '100px', height: '100px'}} variant="top" src={component.Attachments[0].url} />
+      <Card className='text-center' style={{ width: '8rem' }}>
+        <Card.Img style={{ width: '100%', height: '100px'}} variant="top" src={component.Attachments[0].url} />
         <Card.Body>
           <Card.Text style={{ fontSize: '13px'}} className='text-dark'>{component.Name}</Card.Text>
           {/* <Card.Text>
