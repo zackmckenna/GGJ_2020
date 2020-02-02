@@ -92,6 +92,24 @@ Due to this need multiple repair shops have emerged in the station, of varying q
     <Link to={process.env.PUBLIC_URL + '/prompt'}>
       <Button onClick={() => handleClickStart()}>Start Game</Button>
     </Link>
+
+    <p align="left">
+    <p>Game Instructions:</p>
+    <ol>
+      <li>Gather 3-5 players. Each player will need a few index card size pieces of paper and a pen.</li>
+      <li>In each round of the game one player will be the “client” and the other players will be the “crafters”</li>
+      <li>The client will read the prompt and may make up a background story for why they need this item</li>
+      <li>Once “Bidding” begins, all of the other players will be presented with a list of items available to them, 
+      and then have 2 minutes to make up a widget and prepare their pitch (it should be written on their paper). The pitch must have a:</li>
+      <ol>
+      <li>Name</li>
+      <li>Explanation/drawing of how it works, and how it meets the client’s needs</li>
+      </ol>
+      <li>Once the 2 minute countdown ends, the client will listen to each crafter’s pitch. The client then awards the contract for the proposal that they feel is the most convincing.</li>
+      <li>Play ends when players have had enough, and all players have been a judge the same amount of times</li>
+    </ol>
+    </p> 
+
     </>
   )
 }
