@@ -38,26 +38,26 @@ const InventoryGrid = ({ player, handleScoreClick }) => {
           </Link>
         </Col>
       </Row> */}
-      <Container >
-        <Row className='border border-light'>
-          <Col>
+      <Container className='border border-light' >
+        <Row >
+          <Col className='col-4'>
             <InventoryItemCard component={player.components[0]}/>
           </Col>
-          <Col>
+          <Col className='col-4'>
             <InventoryItemCard component={player.components[1]} />
           </Col>
-          <Col>
+          <Col className='col-4'>
             <InventoryItemCard component={player.components[2]} />
           </Col>
         </Row>
-        <Row className='border border-light'>
-        <Col>
+        <Row >
+          <Col className='col-4'>
             <InventoryItemCard component={player.components[3]}/>
           </Col>
-          <Col>
+          <Col className='col-4'>
             <InventoryItemCard component={player.components[4]} />
           </Col>
-          <Col>
+          <Col className='col-4'>
             <InventoryItemCard component={player.components[5]} />
           </Col>
         </Row>
