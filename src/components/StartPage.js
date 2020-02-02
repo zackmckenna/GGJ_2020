@@ -22,7 +22,8 @@ const StartPage = ({
   playerNames,
   playerObjects,
   setJudgeName,
-  judgeIndex
+  judgeIndex,
+  handleToggleSound
 })=> {
 
   const handleClickStart = () => {
@@ -40,10 +41,15 @@ const StartPage = ({
     setNameInput(event.target.value)
   }
 
+  const handleAudioClick = event => {
+    handleToggleSound()
+  }
+
   return (
     <>
     Space Station Gizmo Guy!
       <img src={getRandomImage(introPix, '/images/intros/')} className="App-logo" alt="logo" />
+      <Button onClick={(event) => {handleAudioClick(event)}}>Play/Pause Music</Button>
       <p></p>
         <code>GGJ 2020</code>
 
@@ -51,11 +57,11 @@ const StartPage = ({
 Anyways, the rough conditions and remoteness of this region make this output an oasis for explorers. Most visitors have a need for repairs and upgrades.
 Due to this need multiple repair shops have emerged in the station, of varying quality…</p>
 
-<p>In this game you will take turns being the <u>repair shop owners</u> and <u>customers</u> with particular needs. </p>
+<p>In this game you will take turns being the <u>repair shop owners</u> and <u>clients</u> with particular needs. </p>
 
 <p>As the <u>repair shop owner</u>, the sale is all that matters - the almighty space buck is king. You will need to work with what you have to engineer a solution and out-sell the rival shops. </p>
 
-<p>As the <u>customer</u>, you will decide which solution to purchase based on its ingenuity and how well it solves your problem. In these times, it doesn’t take much to get a ship, and most pilots aren’t experts in engineering.</p>
+<p>As the <u>client</u>, you will decide which solution to purchase based on its ingenuity and how well it solves your problem. In these times, it doesn’t take much to get a ship, and most pilots aren’t experts in engineering.</p>
 
 <p>Get ready to craft some space stuff!</p>
 <p></p>

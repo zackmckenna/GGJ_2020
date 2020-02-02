@@ -24,6 +24,7 @@ function App() {
   const [criteria, setCriteria] = useState([])
   const [nameInput, setNameInput] = useState('')
   const [timeLeft, setTimeLeft] = useState(0);
+  const [soundToggle, setSoundToggle] = useState(false);
 
   useEffect(() => {
     axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/parts')
@@ -93,6 +94,10 @@ function App() {
     setPlayerObjects([])
   }
 
+  const handleToggleSound = () => {
+    setSoundToggle(!soundToggle)
+  }
+
   // const judgeName = () => {
   //   if (playerObjects[judgeIndex]) {
   //     return playerObjects[judgeIndex].Name
@@ -110,6 +115,7 @@ function App() {
         {/* <Navbar className='sticky-top' bg="light">
           <Navbar.Brand href="#home">Judge: {judgeName} </Navbar.Brand>
         </Navbar> */}
+        {soundToggle ? <BackgroundMusic/> : null}
       <header className="App-header">
         <Router>
           <Switch>
@@ -125,6 +131,7 @@ function App() {
                   playerObjects={playerObjects}
                   setJudgeName={setJudgeName}
                   judgeIndex={judgeIndex}
+                  handleToggleSound={handleToggleSound}
                   />
               )}
             }/>

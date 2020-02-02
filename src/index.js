@@ -10,5 +10,4 @@ import BackgroundMusic from './components/MyComponentWithSound'
 ReactDOM.render(
 <BrowserRouter >
   <App />
-  <BackgroundMusic />
 </BrowserRouter>, document.getElementById('root'));
