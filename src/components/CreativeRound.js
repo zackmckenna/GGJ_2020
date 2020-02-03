@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { Container, Card, Jumbotron, Navbar, Button, Row, Col } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Container, Button, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import InventoryItemCard from './InventoryItemCard'
 import InventoryGrid from './InventoryGrid'
 import Timer from './Timer'
 

@@ -34,7 +34,6 @@ function App() {
     setGameState(newGameState)
     axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/parts')
         .then(res => {
-          console.log('Parts', res.data)
           res.data.map(part => {
             const newPart = part
             setParts(parts => [...parts, newPart])
@@ -43,7 +42,6 @@ function App() {
 
     axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/components')
         .then(res => {
-          console.log('Components', res.data)
           res.data.map(component => {
             const newComponent = component
             setComponents(components => [...components, newComponent])
@@ -52,7 +50,6 @@ function App() {
 
     axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/criteria')
           .then(res => {
-            console.log('Criteria', res.data)
             res.data.map(criteria => {
               if (criteria.Name) {
                 const newCriteria = criteria
@@ -94,10 +91,8 @@ function App() {
   // }
 
   const handleNameSubmit = event => {
-    console.log(event)
     event.preventDefault()
     let playerNameArray = playerObjects.map(player => player.name)
-    console.log(playerNameArray)
     if (nameInput !== '' && (!playerNameArray.includes(nameInput))){
       const newPlayerObject = {
         name: nameInput,
@@ -108,8 +103,6 @@ function App() {
       setPlayerNames(playerNames => [...playerNames, nameInput])
       setNameInput('')
       event.target.value = ''
-      console.log('Player Objects:', playerObjects)
-      console.log(gameState)
     }
   }
 
