@@ -16,6 +16,9 @@ bryan and zack
 Global Game Jam 2020
 
 Check out the page hosted on github pages to try it out!
+
+https://zackmckenna.github.io/GGJ_2020/
+
 If you want to run locally, you must first install yarn.
 
 To install dependencies:
