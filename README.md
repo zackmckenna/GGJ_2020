@@ -6,15 +6,6 @@ a bidding RPG game for 3-5!
 
 ### Instructions
 
-
-### Made By
-
-bryan and zack
-
-### For
-
-Global Game Jam 2020
-
 Check out the page hosted on github pages to try it out!
 
 https://zackmckenna.github.io/GGJ_2020/
@@ -28,3 +19,12 @@ To install dependencies:
 To start:
 
 'yarn run start'
+
+### Made By
+
+bryan and zack
+
+### For
+
+Global Game Jam 2020
+
