@@ -22,7 +22,8 @@ To start:
 
 ### Made By
 
-bryan, brian and zack
+Bryan Barnes and Zack Mckenna
+Music by Brian Del Toro
 
 ### For
 
