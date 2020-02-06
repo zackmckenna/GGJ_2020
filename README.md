@@ -22,7 +22,7 @@ To start:
 
 ### Made By
 
-bryan and zack
+bryan, brian and zack
 
 ### For
 
