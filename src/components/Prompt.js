@@ -30,6 +30,12 @@ const Prompt = ({ players, playerObjects, judgeIndex, parts, criteria, judgeName
     }
   }
 
+  const handleRemixClick = () => {
+    setCrit(grabRandomCriteria())
+    setPart(grabRandomPart())
+    setImageStr(getRandomImage(customerPix, '/images/scenarios/'))
+  }
+
   const handleClick = () => {
     console.log('clicked')
     const newPrompt = `I need a ${part} that ${crit}`
@@ -48,7 +54,8 @@ const Prompt = ({ players, playerObjects, judgeIndex, parts, criteria, judgeName
 
   return (
     <>
-      <h4>Client: <span className='text-primary font-weight-bold'>{playerObjects[judgeIndex].name}</span></h4>
+      <h4>Client: <span className='text-primary font-weight-bold'>{playerObjects[judgeIndex].name}</span>        <Button className='btn-danger' onClick={() => handleRemixClick()}>Remix Prompt</Button>
+</h4>
       <img src={imageStr} style={{ maxHeight: '500px'}} alt="logo" />
       <h1>
         I need a <span className='text-danger'>{part}</span> that <span className='text-warning'>{crit}</span>.
