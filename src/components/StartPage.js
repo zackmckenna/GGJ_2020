@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Button, Form, Row, Col } from 'react-bootstrap'
+import { Button, Form, Row, Col, ButtonToolbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
@@ -43,11 +43,35 @@ const StartPage = ({
     handleToggleSound()
   }
 
+  function toggleFullScreen() {
+    if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+     (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+      if (document.documentElement.requestFullScreen) {  
+        document.documentElement.requestFullScreen();  
+      } else if (document.documentElement.mozRequestFullScreen) {  
+        document.documentElement.mozRequestFullScreen();  
+      } else if (document.documentElement.webkitRequestFullScreen) {  
+        document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+      }  
+    } else {  
+      if (document.cancelFullScreen) {  
+        document.cancelFullScreen();  
+      } else if (document.mozCancelFullScreen) {  
+        document.mozCancelFullScreen();  
+      } else if (document.webkitCancelFullScreen) {  
+        document.webkitCancelFullScreen();  
+      }  
+    }  
+  }
+
   return (
     <>
     <p>Gornath Crafters Guild: <i>Bidding Challenge</i>!</p>
       <img src={getRandomImage(introPix, '/images/intros/')} className="App-logo" alt="logo" />
-      <Button onClick={(event) => {handleAudioClick(event)}}>Play/Pause Music</Button>
+      <ButtonToolbar>
+      <Button className="mr-5" onClick={(event) => {handleAudioClick(event)}}>Play/Pause Music</Button>
+      <Button onClick={(event) => {toggleFullScreen()}}>Fullscreen</Button> 
+      </ButtonToolbar>
       <p></p>
         <code>GGJ 2020</code>
 
