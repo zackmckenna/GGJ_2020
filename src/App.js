@@ -114,6 +114,15 @@ function App() {
     setSoundToggle(!soundToggle)
   }
 
+  const handleRestartSound = () => {
+    if (soundToggle && judgeIndex == 0){
+      //do something to reload the music
+      setSoundToggle(false)
+      setTimeout(() => {
+        setSoundToggle(true)
+      },500);
+    }
+  }
   // const judgeName = () => {
   //   if (playerObjects[judgeIndex]) {
   //     return playerObjects[judgeIndex].Name
@@ -166,6 +175,7 @@ function App() {
                   judgeIndex={judgeIndex}
                   gameState={gameState}
                   setGameState={setGameState}
+                  handleRestartSound={handleRestartSound}
                   />
 
               )}
