@@ -9,6 +9,7 @@ a bidding RPG game for 3-5!
 Check out the page hosted on github pages to try it out!
 
 https://zackmckenna.github.io/GGJ_2020/
+^FIXED IN 2025!!!
 
 If you want to run locally, you must first install yarn.
 
