@@ -32,29 +32,34 @@ function App() {
       prompt: ''
     }
     setGameState(newGameState)
-    axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/parts')
+
+    const config = {
+      headers: {
+        "Authorization": "Bearer patME6t5dzll5pJZr.4c282e3d7bff491a22e1428861c76dc353cb8e771b9ca694acd124235a00a31c",
+      },
+    };
+
+    axios.get('https://api.airtable.com/v0/apprkbgfXPMCZlFFR/Parts', config)
         .then(res => {
-          res.data.map(part => {
-            const newPart = part
+          res.data.records.map(part => {
+            const newPart = part.fields
             setParts(parts => [...parts, newPart])
           })
         })
 
-    axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/components')
+    axios.get('https://api.airtable.com/v0/apprkbgfXPMCZlFFR/Components', config)
         .then(res => {
-          res.data.map(component => {
-            const newComponent = component
+          res.data.records.map(component => {
+            const newComponent = component.fields
             setComponents(components => [...components, newComponent])
           })
         })
 
-    axios.get('https://guarded-ridge-39330.herokuapp.com/api/airtable/criteria')
+    axios.get('https://api.airtable.com/v0/apprkbgfXPMCZlFFR/Criteria', config)
           .then(res => {
-            res.data.map(criteria => {
-              if (criteria.Name) {
-                const newCriteria = criteria
-                setCriteria(criteria => [...criteria, newCriteria])
-              }
+            res.data.records.map(criteria => {
+              const newCriteria = criteria.fields
+              setCriteria(criteria => [...criteria, newCriteria])
             })
           })
 
